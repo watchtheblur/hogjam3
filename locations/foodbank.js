@@ -1,11 +1,11 @@
 var inherits = require('inherits');
 var Entity = require('crtrdg-entity');
 
-module.exports = Shop;
-inherits(Shop, Entity);
+module.exports = Foodbank;
+inherits(Foodbank, Entity)
 
-function Shop(options){
-  Entity.call(this);
+function Foodbank(options){
+	Entity.call(this);
   var self = this;
 
   this.game = options.game;
@@ -18,20 +18,18 @@ function Shop(options){
   };
 
   this.size = {
-    x: options.size.x,
-    y: options.size.y
+  	x: options.size.x,
+  	y: options.size.y
   }
 
-  this.on('update', function(interval){
+  this.on('update', function(interval){ 
 
   });
 
   this.on('draw', function(c){
     c.save();
     c.fillStyle = '#ffffff';
-    c.fillRect(this.position.x - this.camera.position.x,
-               this.position.y - this.camera.position.y,
-               this.size.x, this.size.y);
+    c.fillRect(this.position.x - this.camera.position.x, this.position.y - this.camera.position.y, this.size.x, this.size.y);
     c.restore();
   });
 }
