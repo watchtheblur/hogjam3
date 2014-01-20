@@ -29,6 +29,7 @@ var randomRGB = require('./util/math').randomRGB;
 var randomRGBA = require('./util/math').randomRGBA;
 
 var Meter = require('./meter');
+var Clock = require('./clock');
 
 /*
 * create game object
@@ -368,6 +369,15 @@ var moneyMeter = new Meter({
 });
 moneyMeter.addTo(game);
 
+
+var clock = new Clock({
+  game: game,
+  camera: camera,
+  name: "6am",
+  color: "white",
+  position: { x: 190, y: 37 }
+});
+clock.addTo(game);
 
 /*
 *
